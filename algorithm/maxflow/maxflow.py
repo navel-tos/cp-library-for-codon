@@ -53,7 +53,7 @@ class MFGraph[T]:
             i: int = int(fstar[now])
             while i != -1:
                 nxt_i, nxt = self._edge[i] >> 32, self._edge[i] & 0xFFFFFFFF
-                if visited[nxt >> 1] == False and self._capa[i] <= permissible_error:
+                if visited[nxt >> 1] == False and self._capa[i] > permissible_error:
                     visited[nxt >> 1] = True
                     fstar[d] = i32(nxt)
                     d += 2
