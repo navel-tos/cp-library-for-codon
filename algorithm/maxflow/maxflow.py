@@ -241,9 +241,9 @@ class MFGraph[T]:
     def min_cut(self, St: int) -> list[bool]:
         'すべての頂点について、頂点Stから頂点nowに残余グラフで到達可能か判定します。'
         assert 0 <= St < self.N
-        return self._minimum_cut(self, St, T(0))
+        return self._minimum_cut(St, T(0))
     def min_cut(self, St: int, permissible_error: T) -> list[bool]:
         '辺容量が permissible_error 以下の辺を容量0とみなしてmin_cutを行います。'
         assert 0 <= St < self.N
         assert T(0) <= permissible_error
-        return self._minimum_cut(self, St, permissible_error)
+        return self._minimum_cut(St, permissible_error)
